@@ -30,7 +30,7 @@ using namespace esphome;
 
 void StreamServerComponent::setup() {
     ESP_LOGCONFIG(TAG, "Setting up stream server...");
-    this->recv_buf_.reserve(128);
+    this->recv_buf_.reserve(8192);
 
     this->server_ = AsyncServer(this->port_);
     this->server_.begin();
